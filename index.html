@@ -1,733 +1,282 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李岳阳 | 财税顾问 · 注册会计师 · 律师</title>
-<meta name="description" content="李岳阳——注册会计师、律师、高级管理会计师，15年一线财税实战经验，专注财税合规、税务筹划、股权设计、共享CFO服务。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #0f0f10;
-  --bg-card: #141416;
-  --bg-elevated: #1a1a1e;
-  --text-primary: #f0f0f0;
-  --text-secondary: #a0a0a8;
-  --text-muted: #6a6a72;
-  --gold: #c8a44e;
-  --gold-light: #e0c06a;
-  --gold-dark: #a8883a;
-  --accent-gold: #d4af37;
-  --border: rgba(255,255,255,0.06);
-  --border-light: rgba(255,255,255,0.1);
-  --radius: 8px;
-  --radius-lg: 12px;
-  --max-width: 1100px;
-  --nav-height: 64px;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ===== Navigation ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--nav-height);
-  background: rgba(10,10,10,0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-inner {
-  width: 100%;
-  max-width: var(--max-width);
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-logo {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--gold);
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-.nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  transition: color 0.2s;
-  position: relative;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s;
-}
-.nav-links a:hover::after { width: 100%; }
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 24px;
-  cursor: pointer;
-  padding: 8px;
-}
-
-/* ===== Sections ===== */
-section { padding: 100px 24px; }
-.section-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.section-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  border: 1px solid rgba(200,164,78,0.25);
-  padding: 4px 12px;
-  border-radius: 4px;
-}
-.section-title {
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-  line-height: 1.25;
-}
-.section-desc {
-  font-size: 16px;
-  color: var(--text-secondary);
-  max-width: 640px;
-  margin-bottom: 48px;
-}
-
-/* ===== Hero ===== */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: var(--nav-height);
-  position: relative;
-  overflow: hidden;
-}
-#hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(200,164,78,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-content { position: relative; z-index: 1; }
-.hero-name {
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.1;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
-}
-.hero-name .gold { color: var(--gold); }
-.hero-title {
-  font-size: clamp(16px, 2vw, 20px);
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  font-weight: 400;
-}
-.hero-badge {
-  display: inline-flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-.hero-badge span {
-  font-size: 13px;
-  color: var(--gold-light);
-  background: rgba(200,164,78,0.08);
-  border: 1px solid rgba(200,164,78,0.15);
-  padding: 4px 12px;
-  border-radius: 4px;
-}
-.hero-desc {
-  font-size: 17px;
-  color: var(--text-muted);
-  max-width: 560px;
-  line-height: 1.8;
-  margin-bottom: 40px;
-}
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.25s;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-}
-.btn-primary {
-  background: var(--gold);
-  color: #0a0a0a;
-}
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
-}
-.btn-ghost {
-  background: rgba(255,255,255,0.03);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-light);
-}
-.btn-ghost:hover {
-  background: rgba(255,255,255,0.06);
-  color: var(--text-primary);
-  border-color: rgba(255,255,255,0.15);
-}
-.hero-stats {
-  display: flex;
-  gap: 48px;
-  margin-top: 60px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-.hero-stat-num {
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--gold);
-}
-.hero-stat-label {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-/* ===== About ===== */
-#about {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-.about-text p {
-  margin-bottom: 20px;
-  color: var(--text-secondary);
-  font-size: 15px;
-}
-.about-certs {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-}
-.cert-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-}
-.cert-item:last-child { border-bottom: none; }
-.cert-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(200,164,78,0.1);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-.cert-info h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-.cert-info p {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* ===== Services ===== */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.service-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 32px 24px;
-  transition: all 0.3s;
-}
-.service-card:hover {
-  border-color: rgba(200,164,78,0.2);
-  transform: translateY(-2px);
-  background: var(--bg-elevated);
-}
-.service-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-  display: block;
-}
-.service-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.service-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* ===== Team ===== */
-#team { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.team-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  display: flex;
-  gap: 20px;
-}
-.team-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 600;
-  color: #0a0a0a;
-  flex-shrink: 0;
-}
-.team-info h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-.team-info .team-title {
-  font-size: 13px;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.team-info .team-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* ===== Cases ===== */
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.case-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  transition: all 0.3s;
-}
-.case-card:hover { border-color: rgba(200,164,78,0.2); }
-.case-tag {
-  display: inline-block;
-  font-size: 11px;
-  color: var(--gold);
-  background: rgba(200,164,78,0.08);
-  padding: 2px 8px;
-  border-radius: 3px;
-  margin-bottom: 12px;
-}
-.case-card h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.case-card p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* ===== Contact ===== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-.contact-info-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-.contact-info-item .icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(200,164,78,0.08);
-  border: 1px solid rgba(200,164,78,0.15);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.contact-info-item .label {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-.contact-info-item .value {
-  font-size: 15px;
-  color: var(--text-primary);
-}
-.contact-qr {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  text-align: center;
-}
-.contact-qr-placeholder {
-  width: 180px;
-  height: 180px;
-  background: rgba(255,255,255,0.03);
-  border: 2px dashed var(--border-light);
-  border-radius: 8px;
-  margin: 0 auto 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.contact-qr-placeholder .qr-icon { font-size: 40px; opacity: 0.3; }
-.contact-qr .qr-label {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 4px;
-}
-.contact-qr .qr-desc {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.contact-qr .qr-link {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 20px;
-  background: rgba(200,164,78,0.1);
-  color: var(--gold);
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 13px;
-  border: 1px solid rgba(200,164,78,0.2);
-  transition: all 0.2s;
-}
-.contact-qr .qr-link:hover {
-  background: rgba(200,164,78,0.15);
-}
-
-/* ===== Footer ===== */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 48px 24px;
-  text-align: center;
-}
-.footer-links { margin-bottom: 16px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-.footer-links a:hover { color: var(--gold); }
-footer p { font-size: 13px; color: var(--text-muted); }
-
-/* ===== Fade-in Animation ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .nav-links { display: none; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(10,10,10,0.98); flex-direction: column; padding: 16px 24px; gap: 16px; border-bottom: 1px solid var(--border); }
-  .nav-links.open { display: flex; }
-  .menu-toggle { display: block; }
-  .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .about-grid,
-  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-  .services-grid,
-  .cases-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
-  section { padding: 64px 20px; }
-  .section-title { font-size: 28px; }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .services-grid,
-  .cases-grid { grid-template-columns: repeat(2, 1fr); }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李岳阳财税顾问 | 让财税成为竞争力</title>
+  <meta name="description" content="李岳阳，15年财税实战专家·注册会计师·律师。提供乱账梳理、财税合规、税务筹划、股权设计、共享CFO、数字化改造等一站式财税服务。">
+  <meta property="og:title" content="李岳阳财税顾问 | 让财税成为竞争力">
+  <meta property="og:description" content="15年财税实战专家·注册会计师·律师。让财税成为您的核心竞争力。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.liyueyang.com/">
+  <meta property="og:image" content="https://www.liyueyang.com/og-image.jpg">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.liyueyang.com/">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">李岳阳</a>
-    <button class="menu-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <ul class="nav-links">
-      <li><a href="#about" onclick="closeMenu()">关于</a></li>
-      <li><a href="#services" onclick="closeMenu()">服务</a></li>
-      <li><a href="#team" onclick="closeMenu()">团队</a></li>
-      <li><a href="#cases" onclick="closeMenu()">案例</a></li>
-      <li><a href="#contact" onclick="closeMenu()">联系</a></li>
-    </ul>
-  </div>
-</nav>
+  <!-- ========== 导航栏 ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">李岳阳<span>财税</span></a>
+      <button class="menu-toggle" aria-label="切换菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="services.html">服务</a></li>
+        <li><a href="cases.html">案例</a></li>
+        <li><a href="blog.html">博客</a></li>
+        <li><a href="contact.html">联系</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- Hero -->
-<section id="hero">
-  <div class="section-inner hero-content">
-    <div class="hero-name">让财税成为<span class="gold">竞争力</span></div>
-    <div class="hero-title">李岳阳 | 注册会计师 · 律师 · 高级管理会计师</div>
-    <div class="hero-badge">
-      <span>15年一线实战</span>
-      <span>7年头部会所执业</span>
-      <span>8年集团CFO管理</span>
-      <span>郑州 · 服务全国</span>
-    </div>
-    <p class="hero-desc">
-      深耕财务+税务+法律+经营四维体系，为河南省内企业提供<br>
-      财税合规、税务筹划、股权设计、共享CFO等一站式解决方案。
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">立即咨询 →</a>
-      <a href="#services" class="btn btn-ghost">查看服务</a>
-    </div>
-    <div class="hero-stats">
-      <div><div class="hero-stat-num">15+</div><div class="hero-stat-label">年实战经验</div></div>
-      <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">服务企业</div></div>
-      <div><div class="hero-stat-num">4位</div><div class="hero-stat-label">专家团队</div></div>
-      <div><div class="hero-stat-num">7x24</div><div class="hero-stat-label">在线响应</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="section-inner fade-in">
-    <span class="section-tag">关于</span>
-    <h2 class="section-title">深耕财税十五年</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>我是李岳阳，注册会计师、律师、高级管理会计师。15年一线财税实战，经历了从会计师事务所执业到集团财务总监管理的完整路径。</p>
-        <p>7年在头部会计师事务所的执业经历，让我练就了扎实的财税基本功和风险识别能力；8年担任集团财务总监的管理经验，让我深刻理解企业经营的真实痛点和需求。</p>
-        <p>我相信，好的财税服务不是坐在办公室里翻凭证，而是走进企业，理解业务，用财税工具帮企业解决问题、创造价值。</p>
-        <p>如果你正在为乱账梳理、税务合规、股权设计或财务体系建设发愁，不妨聊聊。</p>
+  <!-- ========== Hero 区域 ========== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title fade-in">让财税成为<span>竞争力</span></h1>
+      <p class="hero-subtitle fade-in">15年财税实战专家 · 注册会计师 · 律师<br>以财务、税务、法律、经营四维视角，为企业提供全链路财税解决方案</p>
+      <div class="fade-in">
+        <a href="services.html" class="btn btn-primary">查看服务</a>
+        &nbsp;&nbsp;
+        <a href="contact.html" class="btn btn-outline">预约咨询</a>
       </div>
-      <div class="about-certs">
-        <div class="cert-item">
-          <div class="cert-icon">📜</div>
-          <div class="cert-info"><h4>注册会计师（CPA）</h4><p>中国注册会计师执业资格</p></div>
+      <!-- 数据滚动条 -->
+      <div class="hero-stats fade-in">
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-target="15" data-suffix="+">0</div>
+          <div class="hero-stat-label">年实战经验</div>
         </div>
-        <div class="cert-item">
-          <div class="cert-icon">⚖️</div>
-          <div class="cert-info"><h4>律师资格</h4><p>国家法律职业资格</p></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="hero-stat-label">服务企业</div>
         </div>
-        <div class="cert-item">
-          <div class="cert-icon">📊</div>
-          <div class="cert-info"><h4>高级管理会计师</h4><p>中国总会计师协会认证</p></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-target="4" data-suffix="">0</div>
+          <div class="hero-stat-label">专家团队</div>
         </div>
-        <div class="cert-item">
-          <div class="cert-icon">🏢</div>
-          <div class="cert-info"><h4>高端财税事业部</h4><p>团队4人，服务企业500+</p></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-target="24" data-suffix="×7">0</div>
+          <div class="hero-stat-label">在线响应</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Services -->
-<section id="services">
-  <div class="section-inner fade-in">
-    <span class="section-tag">服务</span>
-    <h2 class="section-title">一站式财税解决方案</h2>
-    <p class="section-desc">从合规到筹划，从清理到体系，覆盖企业全生命周期的财税需求。</p>
-    <div class="services-grid">
-      <div class="service-card"><span class="service-icon">🔍</span><h3>乱账梳理</h3><p>历史账务清理、两账合一、账实核对，还原真实财务状况，规避历史风险。</p></div>
-      <div class="service-card"><span class="service-icon">📋</span><h3>财税合规</h3><p>金税四期下的合规体系建设、发票管理、纳税申报规范，降低税务稽查风险。</p></div>
-      <div class="service-card"><span class="service-icon">📐</span><h3>税务筹划</h3><p>企业所得税、增值税、个税等全税种筹划方案设计，合法合规降低税负。</p></div>
-      <div class="service-card"><span class="service-icon">🏗️</span><h3>股权设计</h3><p>股权架构搭建、合伙机制设计、家族企业传承规划，平衡控制权与激励。</p></div>
-      <div class="service-card"><span class="service-icon">👔</span><h3>共享CFO</h3><p>中小企业专属财务顾问服务，财务战略规划、预算管理、内控体系建设。</p></div>
-      <div class="service-card"><span class="service-icon">💻</span><h3>数字化改造</h3><p>传统企业财务数字化升级、ERP系统选型与实施、业财一体化方案。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Team -->
-<section id="team">
-  <div class="section-inner fade-in">
-    <span class="section-tag">团队</span>
-    <h2 class="section-title">专业团队</h2>
-    <p class="section-desc">四位资深财税专家，覆盖审计、税务、管理、信息化等多个专业领域。</p>
-    <div class="team-grid">
-      <div class="team-card"><div class="team-avatar">杜</div><div class="team-info"><h4>杜楠楠</h4><div class="team-title">高端财税事业部 总经理</div><div class="team-desc">注册会计师、注册税务师、高级会计师。15年财税深耕，擅长高端财税顾问、税务合规筹划、股权架构设计、历史乱账清理。</div></div></div>
-      <div class="team-card"><div class="team-avatar">田</div><div class="team-info"><h4>田麒志</h4><div class="team-title">高端财税事业部</div><div class="team-desc">注册会计师、税务师、管理会计师。擅长ERP设计与实施、全面预算管理、企业资本运作、财务体系建设。</div></div></div>
-      <div class="team-card"><div class="team-avatar">郜</div><div class="team-info"><h4>郜冬霞</h4><div class="team-title">高端财税事业部</div><div class="team-desc">20+年财税实战专家，税务师、中级会计师。擅长财务体系建设、税务合规筹划、股权架构设计、企业风险管控。</div></div></div>
-      <div class="team-card"><div class="team-avatar">李</div><div class="team-info"><h4>李静雯</h4><div class="team-title">高端财税事业部</div><div class="team-desc">税务师(CTA)、中级会计师。精通企业工商全流程服务，擅长税务历史问题处理与税务规划。</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Cases -->
-<section id="cases">
-  <div class="section-inner fade-in">
-    <span class="section-tag">案例</span>
-    <h2 class="section-title">实战案例</h2>
-    <p class="section-desc">以下为部分服务案例，基于客户隐私保护，已做脱敏处理。</p>
-    <div class="cases-grid">
-      <div class="case-card"><span class="case-tag">电力设备</span><h3>某变压器企业财税合规改造</h3><p>从两套账到规范经营，建立完整财税体系，实现税务风险全面排查与合规落地。同时建立成本核算体系，利润率提升3个百分点。</p></div>
-      <div class="case-card"><span class="case-tag">医药流通</span><h3>某医药企业股权架构重组</h3><p>家族企业股权架构重新设计，设立持股平台，实现控制权集中与员工激励双目标，同时优化税务成本，年节税超百万元。</p></div>
-      <div class="case-card"><span class="case-tag">建筑工程</span><h3>某建筑企业乱账清理项目</h3><p>三年历史账务全面清理，建立项目成本核算体系，实现业财数据打通。协助企业对接银行融资，获批授信额度2000万元。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="section-inner fade-in">
-    <span class="section-tag">联系</span>
-    <h2 class="section-title">随时在线</h2>
-    <p class="section-desc">添加飞书机器人，7×24小时在线响应。复杂问题我亲自处理。</p>
-    <div class="contact-grid">
-      <div>
-        <div class="contact-info-item">
-          <div class="icon">📱</div>
-          <div><div class="label">飞书机器人</div><div class="value">@李岳阳的财税小助理</div></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="icon">📍</div>
-          <div><div class="label">服务区域</div><div class="value">河南郑州 · 全国在线服务</div></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="icon">⏰</div>
-          <div><div class="label">响应时间</div><div class="value">AI助理秒回 · 本人2小时内</div></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="icon">🤝</div>
-          <div><div class="label">服务方式</div><div class="value">上门尽调 · 在线咨询 · 长期顾问</div></div>
-        </div>
+  <!-- ========== 服务概览 ========== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Services</div>
+        <h2 class="section-title">6大核心服务</h2>
+        <p class="section-subtitle">覆盖企业全生命周期财税需求，一站式解决您的财税难题</p>
       </div>
-      <div class="contact-qr">
-        <div class="contact-qr-placeholder">
-          <span class="qr-icon">⊞</span>
-          <span style="font-size:12px;color:var(--text-muted)">扫码添加</span>
-        </div>
-        <div class="qr-label">飞书扫码添加</div>
-        <div class="qr-desc">李岳阳的财税小助理 · 7×24在线</div>
-        <a href="https://applink.feishu.cn/T97jD0UwKGOh" class="qr-link" target="_blank" rel="noopener">打开机器人 →</a>
+      <div class="services-grid">
+        <a href="services.html#service-0" class="service-card fade-in">
+          <div class="service-card-icon">📊</div>
+          <h3>乱账梳理</h3>
+          <p>历史账目混乱？专业团队快速理清，建立规范的账务体系，还原真实财务状况。</p>
+        </a>
+        <a href="services.html#service-1" class="service-card fade-in">
+          <div class="service-card-icon">🛡️</div>
+          <h3>财税合规</h3>
+          <p>全面诊断企业财税风险，量身定制合规方案，让企业安心经营、从容发展。</p>
+        </a>
+        <a href="services.html#service-2" class="service-card fade-in">
+          <div class="service-card-icon">💡</div>
+          <h3>税务筹划</h3>
+          <p>合法合规降低税负，优化税务结构，让每一分钱都花在刀刃上。</p>
+        </a>
+        <a href="services.html#service-3" class="service-card fade-in">
+          <div class="service-card-icon">🏗️</div>
+          <h3>股权设计</h3>
+          <p>科学设计股权架构，平衡控制权与激励，为融资和上市奠定坚实基础。</p>
+        </a>
+        <a href="services.html#service-4" class="service-card fade-in">
+          <div class="service-card-icon">👔</div>
+          <h3>共享CFO</h3>
+          <p>按需聘请资深CFO服务，获得战略级财务决策支持，降低高端管理成本。</p>
+        </a>
+        <a href="services.html#service-5" class="service-card fade-in">
+          <div class="service-card-icon">🔄</div>
+          <h3>数字化改造</h3>
+          <p>引入智能财税系统，实现业财一体化，让数据驱动决策，提升管理效率。</p>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <div class="section-inner">
-    <div class="footer-links">
-      <a href="#about">关于</a>
-      <a href="#services">服务</a>
-      <a href="#team">团队</a>
-      <a href="#cases">案例</a>
-      <a href="#contact">联系</a>
+  <!-- ========== 案例精选 ========== -->
+  <section class="section" id="cases">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Cases</div>
+        <h2 class="section-title">精选案例</h2>
+        <p class="section-subtitle">每一个案例背后，都是一次切实的财税价值创造</p>
+      </div>
+      <div class="cases-grid">
+        <a href="cases.html#case-0" class="case-card fade-in">
+          <div class="case-tag">制造业</div>
+          <h3>变压器企业财税合规改造</h3>
+          <div class="case-section">
+            <div class="case-section-label">痛点</div>
+            <p>财务核算混乱，税务申报不准确，面临税务稽查风险</p>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">效果</div>
+          </div>
+          <div class="case-result">
+            <div class="case-result-item">
+              <div class="case-result-number">42%</div>
+              <div class="case-result-label">税负降低</div>
+            </div>
+            <div class="case-result-item">
+              <div class="case-result-number">100%</div>
+              <div class="case-result-label">合规达标</div>
+            </div>
+          </div>
+        </a>
+        <a href="cases.html#case-1" class="case-card fade-in">
+          <div class="case-tag">医药</div>
+          <h3>医药企业股权架构重组</h3>
+          <div class="case-section">
+            <div class="case-section-label">痛点</div>
+            <p>股权结构复杂，家族内部权责不清，制约融资发展</p>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">效果</div>
+          </div>
+          <div class="case-result">
+            <div class="case-result-item">
+              <div class="case-result-number">3轮</div>
+              <div class="case-result-label">融资完成</div>
+            </div>
+            <div class="case-result-item">
+              <div class="case-result-number">2.8亿</div>
+              <div class="case-result-label">估值提升</div>
+            </div>
+          </div>
+        </a>
+        <a href="cases.html#case-2" class="case-card fade-in">
+          <div class="case-tag">建筑</div>
+          <h3>建筑企业乱账清理</h3>
+          <div class="case-section">
+            <div class="case-section-label">痛点</div>
+            <p>多年跨区域项目账目混杂，成本归集不清，影响投标资质</p>
+          </div>
+          <div class="case-section">
+            <div class="case-section-label">效果</div>
+          </div>
+          <div class="case-result">
+            <div class="case-result-item">
+              <div class="case-result-number">6年</div>
+              <div class="case-result-label">账目清理</div>
+            </div>
+            <div class="case-result-item">
+              <div class="case-result-number">3级</div>
+              <div class="case-result-label">资质晋升</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div style="text-align:center; margin-top:40px;" class="fade-in">
+        <a href="cases.html" class="btn btn-outline">查看全部案例 →</a>
+      </div>
     </div>
-    <p>© 2026 李岳阳 · 财税顾问 | 注册会计师 · 律师 · 高级管理会计师</p>
-  </div>
-</footer>
+  </section>
 
-<script>
-// Mobile menu close on link click
-function closeMenu() { document.querySelector('.nav-links').classList.remove('open'); }
+  <!-- ========== 团队展示 ========== -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Team</div>
+        <h2 class="section-title">专业团队</h2>
+        <p class="section-subtitle">复合型财税专家，为您保驾护航</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card fade-in">
+          <div class="team-avatar">👤</div>
+          <h4>李岳阳</h4>
+          <div class="role">创始人 / 首席顾问</div>
+          <div class="contact-info">注册会计师 · 律师<br>15年财税实战经验</div>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-avatar">👤</div>
+          <h4>张敏</h4>
+          <div class="role">高级税务顾问</div>
+          <div class="contact-info">注册税务师<br>10年税务筹划经验</div>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-avatar">👤</div>
+          <h4>王磊</h4>
+          <div class="role">财务咨询总监</div>
+          <div class="contact-info">高级会计师<br>8年企业财务管理</div>
+        </div>
+        <div class="team-card fade-in">
+          <div class="team-avatar">👤</div>
+          <h4>陈静</h4>
+          <div class="role">数字化顾问</div>
+          <div class="contact-info">信息系统专家<br>6年业财一体化实施</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-// Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  <!-- ========== CTA ========== -->
+  <section class="cta-section fade-in">
+    <div class="container">
+      <h2>让专业的人，做专业的事</h2>
+      <p>立即预约一次免费财税诊断，发现您企业中的财税优化空间</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary">预约咨询</a>
+        <a href="about.html" class="btn btn-ghost">了解更多</a>
+      </div>
+    </div>
+  </section>
 
-// Close mobile menu on resize
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) document.querySelector('.nav-links').classList.remove('open');
-});
-</script>
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>李岳阳<span>财税</span></h3>
+        <p>15年财税实战专家，以财务、税务、法律、经营四维视角，为企业提供全链路财税解决方案，让财税成为核心竞争力。</p>
+      </div>
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="services.html">服务</a></li>
+          <li><a href="cases.html">案例</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>更多</h4>
+        <ul>
+          <li><a href="blog.html">博客</a></li>
+          <li><a href="contact.html">联系</a></li>
+          <li><a href="sitemap.xml">站点地图</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>服务区域</h4>
+        <ul>
+          <li><a href="contact.html">河南郑州</a></li>
+          <li><a href="contact.html">周边地区</a></li>
+          <li><a href="contact.html">远程服务</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 李岳阳财税顾问 版权所有 | 让财税成为竞争力
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

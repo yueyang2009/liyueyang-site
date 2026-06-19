@@ -1,0 +1,6 @@
+# 允许所有爬虫
+User-agent: *
+Allow: /
+
+# 指向站点地图
+Sitemap: https://www.liyueyang.com/sitemap.xml
